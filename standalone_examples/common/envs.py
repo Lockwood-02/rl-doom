@@ -193,7 +193,7 @@ def create_eval_vec_env(**kwargs) -> vec_env.VecTransposeImage:
 
 def solve_env(env: vec_env.VecTransposeImage, eval_env: vec_env.VecTransposeImage, scenario: str, agent_args: t.Dict):
     # Build the agent.
-    agent = ppo.PPO(policies.ActorCriticCnnPolicy, env, tensorboard_log='logs/tensorboard', seed=0, **agent_args)
+    agent = ppo.PPO(policies.ActorCriticCnnPolicy, env, tensorboard_log='logs/tensorboard', **agent_args)
     init_model(agent)
 
     # Create callbacks.
